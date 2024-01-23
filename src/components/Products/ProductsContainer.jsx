@@ -21,8 +21,14 @@ export default function ProductsContainer() {
                credentials: 'include',
 
             });
+            console.log("response 1")
             console.log(response)
+
+
             if (response.ok) {
+               console.log("response 2")
+               console.log(response)
+
                const data = await response.json();
                setProducts(data.responseDto.payload);
             } else {
