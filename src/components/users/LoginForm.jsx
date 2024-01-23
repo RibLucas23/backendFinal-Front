@@ -28,7 +28,7 @@ function LoginForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/login', {
+         const response = await fetch('https://backend-final-indol.vercel.app/api/session/login', {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
@@ -37,23 +37,17 @@ function LoginForm() {
             credentials: 'include',
          });
 
-         console.log(response.credentials)
-         // console.log(response)
+         // Check if the response is ok
          if (response.ok) {
             const data = await response.json();
-            console.log(data)
+            console.log(data);
             // Almacena la información de la sesión en el estado o en las cookies
             if (data.userInfo) {
-               const userData = JSON.stringify(data.userInfo)
+               const userData = JSON.stringify(data.userInfo);
                console.log(userData);
                // Accede a la cookie 'user' y haz lo que necesites con la sesión del usuario
                Cookies.set('usuario', userData);
                router.push('/');
-               // Cookies.set('usuario', data.userInfo, { expires: 1 }); // Almacena el token por 7 días (ajusta según tus necesidades)
-               // Puedes almacenar la información de la sesión en el estado o en las cookies
-               // por ejemplo, utilizando una biblioteca como react-cookie
-               // o en el estado global de tu aplicación (por ejemplo, con React Context).
-               // Después de almacenar la información, puedes redirigir a la página protegida.
             }
          } else {
             console.error('Login failed.');
@@ -63,12 +57,11 @@ function LoginForm() {
       }
    };
 
-
    const handlelogout = async (e) => {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/logout', {
+         const response = await fetch('https://backend-final-indol.vercel.app/api/session/logout', {
             method: 'GET',
             headers: {
                'Content-Type': 'application/json',
