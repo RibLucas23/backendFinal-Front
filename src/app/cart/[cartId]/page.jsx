@@ -3,7 +3,7 @@
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
 
-export default function page() {
+export default function CartDetail() {
    const [cart, setCart] = useState([]);
    const [user, setUser] = useState({})
    useEffect(() => {
