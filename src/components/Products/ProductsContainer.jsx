@@ -13,7 +13,7 @@ export default function ProductsContainer() {
 
          try {
             // Realizar la solicitud solo si el usuario está autenticado
-            const response = await fetch('https://backend-final-indol.vercel.app/api/products/mongo', {
+            const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/products/mongo', {
                method: 'GET',
                headers: {
                   'Content-Type': 'application/json',

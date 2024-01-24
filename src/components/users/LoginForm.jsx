@@ -28,7 +28,7 @@ function LoginForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backend-final-indol.vercel.app/api/session/login', {
+         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/login', {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function LoginForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backend-final-indol.vercel.app/api/session/logout', {
+         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/logout', {
             method: 'GET',
             headers: {
                'Content-Type': 'application/json',
