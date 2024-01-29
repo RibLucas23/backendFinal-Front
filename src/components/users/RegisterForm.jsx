@@ -26,7 +26,7 @@ export default function RegisterForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/signup', {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/signup`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',

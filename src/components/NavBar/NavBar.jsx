@@ -42,7 +42,7 @@ export default function NavBar() {
    const handlelogout = async (e) => {
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/logout', {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/logout`, {
             method: 'GET',
             headers: {
                'Content-Type': 'application/json',

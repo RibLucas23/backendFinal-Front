@@ -40,7 +40,7 @@ export default function Card({ product }) {
    const handleBuy = async () => {
 
       try {
-         const response = await fetch(`https://backendfinal-production-c834.up.railway.app/api/carts/mongo/${user.cart}/product/${product._id}`, {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/carts/mongo/${user.cart}/product/${product._id}`, {
             method: 'PUT',
             headers: {
                'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function Card({ product }) {
          });
          console.log(response)
          if (response.ok) {
-            console.log('Registration successful!');
+            alert("producto agregado al carrito con exito")
          } else {
             console.error(error);
          }

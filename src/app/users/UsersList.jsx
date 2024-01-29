@@ -9,7 +9,7 @@ export default function UsersList() {
 
          try {
             // Realizar la solicitud solo si el usuario está autenticado
-            const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/`, {
                method: 'GET',
                headers: {
                   'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function UsersList() {
    const changeRol = async (uid) => {
       try {
          // Realizar la solicitud solo si el usuario está autenticado
-         const response = await fetch(`https://backendfinal-production-c834.up.railway.app/api/session/premium/${uid}`, {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/premium/${uid}`, {
             method: 'PUT',
             headers: {
                'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export default function UsersList() {
    const deleteUser = async (uid) => {
       try {
          // Realizar la solicitud solo si el usuario está autenticado
-         const response = await fetch(`https://backendfinal-production-c834.up.railway.app/api/session/delete/${uid}`, {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/delete/${uid}`, {
             method: 'DELETE',
             headers: {
                'Content-Type': 'application/json',

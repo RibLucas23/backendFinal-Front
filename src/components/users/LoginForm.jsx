@@ -7,7 +7,6 @@ import Cookies from 'js-cookie';
 import Link from 'next/link';
 
 function LoginForm() {
-
    //use Navigate
    const router = useRouter()
    const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -28,7 +27,9 @@ function LoginForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/login', {
+
+
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/login`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ function LoginForm() {
       e.preventDefault();
 
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/session/logout', {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/session/logout`, {
             method: 'GET',
             headers: {
                'Content-Type': 'application/json',

@@ -39,7 +39,7 @@ export default function ProductsForm() {
       e.preventDefault();
       console.log(formData)
       try {
-         const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/products/mongo', {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/products/mongo`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',

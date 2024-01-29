@@ -28,7 +28,7 @@ export default function ProductsList() {
 
          try {
             // Realizar la solicitud solo si el usuario está autenticado
-            const response = await fetch('https://backendfinal-production-c834.up.railway.app/api/products/mongo', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/products/mongo`, {
                method: 'GET',
                headers: {
                   'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ export default function ProductsList() {
    const deleteProduct = async (pid) => {
       try {
          // Realizar la solicitud solo si el usuario está autenticado
-         const response = await fetch(`https://backendfinal-production-c834.up.railway.app/api/products/mongo/${pid}`, {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/products/mongo/${pid}`, {
             method: 'DELETE',
             headers: {
                'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default function ProductsList() {
    const addProduct = async (pid) => {
 
       try {
-         const response = await fetch(`https://backendfinal-production-c834.up.railway.app/api/carts/mongo/${user.cart}/product/${pid}`, {
+         const response = await fetch(`${process.env.NEXT_PUBLIC_RUTA_FETCH}/api/carts/mongo/${user.cart}/product/${pid}`, {
             method: 'PUT',
             headers: {
                'Content-Type': 'application/json',
